@@ -1,0 +1,59 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/animations" as *;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $sp-xl;
+
+  @include respond(md) { padding: 0 $sp-md; }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.visible { opacity: 1; transform: translateX(0); }
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.visible { opacity: 1; transform: translateX(0); }
+}
+
+@for $i from 1 through 6 {
+  .delay-#{$i} { transition-delay: #{$i * 0.1}s; }
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: $clr-red;
+  margin: $sp-lg auto;
+
+  &--left { margin-left: 0; }
+}

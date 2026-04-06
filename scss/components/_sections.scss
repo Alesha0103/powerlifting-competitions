@@ -1,0 +1,549 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/animations" as *;
+
+// ============================================================
+// COMPONENTS — COUNTDOWN
+// ============================================================
+
+.countdown-section {
+    padding: $sp-2xl $sp-xl;
+    background: $clr-red;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(
+                ellipse at 20% 50%,
+                rgba(0, 0, 0, 0.3),
+                transparent 60%
+            ),
+            radial-gradient(
+                ellipse at 80% 50%,
+                rgba(0, 0, 0, 0.3),
+                transparent 60%
+            );
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    &__label {
+        font-family: $font-heading;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba($clr-white, 0.7);
+        margin-bottom: $sp-lg;
+        display: block;
+    }
+
+    &__title {
+        font-family: $font-display;
+        font-size: clamp(2rem, 4vw, 4rem);
+        color: $clr-white;
+        margin-bottom: $sp-xl;
+    }
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: $sp-xl;
+
+    @include respond(sm) {
+        gap: $sp-md;
+    }
+
+    &__item {
+        text-align: center;
+        animation: countdown-tick 1s ease-in-out infinite;
+
+        &:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+        &:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+        &:nth-child(4) {
+            animation-delay: 0.75s;
+        }
+    }
+
+    &__number {
+        font-family: $font-display;
+        font-size: clamp(3rem, 8vw, 7rem);
+        line-height: 1;
+        color: $clr-white;
+        display: block;
+        min-width: 120px;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+        @include respond(sm) {
+            min-width: 60px;
+            font-size: 3rem;
+        }
+    }
+
+    &__label {
+        font-family: $font-heading;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: rgba($clr-white, 0.6);
+        margin-top: $sp-xs;
+        display: block;
+    }
+
+    &__sep {
+        font-family: $font-display;
+        font-size: clamp(3rem, 8vw, 7rem);
+        color: rgba($clr-white, 0.3);
+        line-height: 1;
+        align-self: flex-start;
+        margin-top: -4px;
+    }
+}
+
+// ============================================================
+// COMPONENTS — STATS
+// ============================================================
+
+.stats-section {
+    padding: $sp-3xl $sp-xl;
+    background: $clr-bg;
+    position: relative;
+
+    &__grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: $clr-border;
+        border: 1px solid $clr-border;
+
+        @include respond(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include respond(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.stat-item {
+    background: $clr-surface;
+    padding: $sp-xl $sp-lg;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all $tr-normal;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: $clr-red;
+        transition: width $tr-normal;
+    }
+
+    &:hover {
+        background: $clr-surface-2;
+        &::after {
+            width: 80%;
+        }
+    }
+
+    &__number {
+        font-family: $font-display;
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        color: $clr-white;
+        line-height: 1;
+        display: block;
+
+        span {
+            color: $clr-red;
+        }
+    }
+
+    &__label {
+        font-family: $font-heading;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: $clr-gray;
+        margin-top: $sp-sm;
+        display: block;
+    }
+}
+
+// ============================================================
+// COMPONENTS — SCHEDULE
+// ============================================================
+
+.schedule-section {
+    padding: $sp-3xl $sp-xl;
+    background: $clr-surface;
+    position: relative;
+
+    &__header {
+        text-align: center;
+        margin-bottom: $sp-2xl;
+
+        .section-label {
+            font-family: $font-heading;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: $clr-red;
+            margin-bottom: $sp-md;
+            display: block;
+        }
+
+        h2 {
+            font-family: $font-display;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            color: $clr-white;
+        }
+    }
+
+    &__grid {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: $sp-sm;
+    }
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    gap: $sp-lg;
+    align-items: center;
+    padding: $sp-lg $sp-xl;
+    background: $clr-bg;
+    border: 1px solid $clr-border;
+    border-left: 4px solid transparent;
+    transition: all $tr-normal;
+
+    @include respond(sm) {
+        grid-template-columns: 1fr;
+        gap: $sp-sm;
+        border-left-width: 4px;
+    }
+
+    &:hover {
+        border-left-color: $clr-red;
+        transform: translateX(4px);
+        background: rgba($clr-red, 0.04);
+    }
+
+    &--active {
+        border-left-color: $clr-gold !important;
+        background: rgba($clr-gold, 0.05) !important;
+    }
+
+    &__time {
+        font-family: $font-heading;
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: $clr-red;
+        letter-spacing: 0.1em;
+    }
+
+    &__event {
+        font-family: $font-heading;
+        font-size: 1rem;
+        font-weight: 700;
+        color: $clr-white;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        small {
+            display: block;
+            font-size: 0.75rem;
+            color: $clr-gray;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            margin-top: 2px;
+        }
+    }
+
+    &__badge {
+        font-family: $font-heading;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        background: rgba($clr-red, 0.15);
+        border: 1px solid rgba($clr-red, 0.4);
+        color: $clr-red;
+        white-space: nowrap;
+
+        &--gold {
+            background: rgba($clr-gold, 0.15);
+            border-color: rgba($clr-gold, 0.4);
+            color: $clr-gold;
+        }
+    }
+}
+
+// ============================================================
+// COMPONENTS — PRIZES
+// ============================================================
+
+.prizes-section {
+    padding: $sp-3xl $sp-xl;
+    background: $clr-bg;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "PRIZES";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: $font-display;
+        font-size: clamp(8rem, 20vw, 18rem);
+        color: rgba($clr-white, 0.02);
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: $sp-2xl;
+
+        .section-label {
+            font-family: $font-heading;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: $clr-gold;
+            margin-bottom: $sp-md;
+            display: block;
+        }
+
+        h2 {
+            font-family: $font-display;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            color: $clr-white;
+        }
+    }
+
+    &__grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $sp-lg;
+        align-items: end;
+
+        @include respond(md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.prize-card {
+    background: $clr-surface;
+    border: 1px solid $clr-border;
+    padding: $sp-xl $sp-lg;
+    text-align: center;
+    position: relative;
+    transition: all $tr-normal;
+
+    &--gold {
+        border-color: $clr-gold;
+        transform: scale(1.05);
+        background: $clr-surface-2;
+
+        &::before {
+            content: "★ 1ST PLACE ★";
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: $clr-gold;
+            color: $clr-bg;
+            font-family: $font-heading;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            padding: 4px 16px;
+            white-space: nowrap;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: $shadow-deep;
+
+        &.prize-card--gold {
+            transform: translateY(-8px) scale(1.07);
+        }
+    }
+
+    &__place {
+        font-family: $font-display;
+        font-size: 4rem;
+        color: $clr-gray;
+        line-height: 1;
+        margin-bottom: $sp-sm;
+
+        &--gold {
+            color: $clr-gold;
+            text-shadow: $shadow-gold;
+        }
+        &--silver {
+            color: #c0c0c0;
+        }
+        &--bronze {
+            color: #cd7f32;
+        }
+    }
+
+    &__amount {
+        font-family: $font-display;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: $clr-white;
+        margin-bottom: $sp-md;
+    }
+
+    &__perks {
+        border-top: 1px solid $clr-border;
+        margin-top: $sp-md;
+        padding-top: $sp-md;
+
+        li {
+            font-family: $font-body;
+            font-size: 0.85rem;
+            color: $clr-gray-light;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba($clr-border, 0.5);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// ============================================================
+// COMPONENTS — REGISTER CTA
+// ============================================================
+
+.register-section {
+    padding: $sp-3xl $sp-xl;
+    background: $clr-surface;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse 60% 60% at 50% 0%,
+            rgba($clr-red, 0.12),
+            transparent 70%
+        );
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    &__eyebrow {
+        font-family: $font-heading;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: $clr-red;
+        display: block;
+        margin-bottom: $sp-lg;
+    }
+
+    h2 {
+        font-family: $font-display;
+        font-size: clamp(3rem, 6vw, 6rem);
+        color: $clr-white;
+        line-height: 0.95;
+        margin-bottom: $sp-lg;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $clr-gray-light;
+        margin-bottom: $sp-xl;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+    }
+
+    &__form {
+        display: flex;
+        gap: $sp-md;
+        max-width: 500px;
+        margin: 0 auto $sp-xl;
+
+        @include respond(sm) {
+            flex-direction: column;
+        }
+
+        input {
+            flex: 1;
+            background: $clr-bg;
+            border: 1px solid $clr-border;
+            color: $clr-white;
+            padding: $sp-md $sp-lg;
+            font-family: $font-body;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color $tr-fast;
+
+            &::placeholder {
+                color: $clr-gray;
+            }
+            &:focus {
+                border-color: $clr-red;
+            }
+        }
+    }
+
+    &__disclaimer {
+        font-size: 0.75rem;
+        color: $clr-gray;
+        font-family: $font-heading;
+        letter-spacing: 0.05em;
+    }
+}

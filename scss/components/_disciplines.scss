@@ -1,0 +1,179 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/animations" as *;
+
+.disciplines {
+    padding: $sp-3xl $sp-xl;
+    position: relative;
+    background: $clr-surface;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, $clr-red, transparent);
+    }
+
+    &__header {
+        text-align: center;
+        margin-bottom: $sp-2xl;
+
+        .section-label {
+            font-family: $font-heading;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: $clr-red;
+            margin-bottom: $sp-md;
+            display: block;
+        }
+
+        h2 {
+            font-family: $font-display;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            color: $clr-white;
+        }
+    }
+
+    &__grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $sp-lg;
+
+        @include respond(md) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.discipline-card {
+    background: $clr-bg;
+    border: 1px solid $clr-border;
+    padding: $sp-xl $sp-lg;
+    position: relative;
+    overflow: hidden;
+    transition: all $tr-normal;
+    cursor: default;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: $clr-red;
+        transition: height $tr-slow;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            ellipse at 50% 0%,
+            rgba($clr-red, 0.08),
+            transparent 70%
+        );
+        opacity: 0;
+        transition: opacity $tr-normal;
+    }
+
+    &:hover {
+        border-color: $clr-red;
+        transform: translateY(-6px);
+        box-shadow: $shadow-deep, $shadow-red;
+
+        &::before {
+            height: 100%;
+        }
+        &::after {
+            opacity: 1;
+        }
+
+        .discipline-card__icon {
+            color: $clr-red;
+            text-shadow: 0 0 30px rgba($clr-red, 0.8);
+        }
+    }
+
+    &__number {
+        position: absolute;
+        top: $sp-md;
+        right: $sp-md;
+        font-family: $font-display;
+        font-size: 5rem;
+        color: rgba($clr-white, 0.04);
+        line-height: 1;
+    }
+
+    &__icon {
+        font-size: 3rem;
+        margin-bottom: $sp-lg;
+        display: block;
+        transition: all $tr-normal;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        font-family: $font-display;
+        font-size: 2.5rem;
+        color: $clr-white;
+        margin-bottom: $sp-sm;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__sub {
+        font-family: $font-heading;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: $clr-gray;
+        margin-bottom: $sp-lg;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__desc {
+        font-size: 0.9rem;
+        color: $clr-gray-light;
+        line-height: 1.7;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__record {
+        margin-top: $sp-lg;
+        padding-top: $sp-lg;
+        border-top: 1px solid $clr-border;
+        position: relative;
+        z-index: 1;
+
+        .record-label {
+            font-family: $font-heading;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: $clr-gray;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .record-value {
+            font-family: $font-display;
+            font-size: 2rem;
+            color: $clr-gold;
+            text-shadow: $shadow-gold;
+        }
+    }
+}

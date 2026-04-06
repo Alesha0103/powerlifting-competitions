@@ -1,0 +1,42 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../utils/animations" as *;
+
+.site-footer {
+    background: $clr-surface;
+    border-top: 1px solid $clr-border;
+    padding: $sp-xl;
+    text-align: center;
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        gap: $sp-xl;
+        margin-bottom: $sp-lg;
+
+        @include respond(sm) {
+            flex-direction: column;
+            gap: $sp-md;
+        }
+
+        a {
+            font-family: $font-heading;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: $clr-gray;
+            transition: color $tr-fast;
+
+            &:hover {
+                color: $clr-red-hot;
+            }
+        }
+    }
+
+    &__copy {
+        font-size: 0.75rem;
+        color: $clr-gray;
+        font-family: $font-heading;
+        letter-spacing: 0.1em;
+    }
+}

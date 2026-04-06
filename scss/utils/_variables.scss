@@ -1,0 +1,41 @@
+// Colors
+$clr-bg: #0a0a0a;
+$clr-surface: #111111;
+$clr-surface-2: #1a1a1a;
+$clr-border: #2a2a2a;
+$clr-red: #c0392b;
+$clr-red-hot: #e74c3c;
+$clr-gold: #f39c12;
+$clr-white: #ffffff;
+$clr-gray: #888888;
+$clr-gray-light: #cccccc;
+
+// Typography
+$font-display: "Bebas Neue", "Impact", sans-serif;
+$font-heading: "Oswald", "Arial Narrow", sans-serif;
+$font-body: "Barlow Condensed", "Arial", sans-serif;
+
+// Spacing
+$sp-xs: 4px;
+$sp-sm: 8px;
+$sp-md: 16px;
+$sp-lg: 24px;
+$sp-xl: 40px;
+$sp-2xl: 64px;
+$sp-3xl: 96px;
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transitions
+$tr-fast: 0.15s ease;
+$tr-normal: 0.3s ease;
+$tr-slow: 0.6s ease;
+
+// Shadows
+$shadow-red: 0 0 40px rgba($clr-red, 0.4);
+$shadow-gold: 0 0 20px rgba($clr-gold, 0.5);
+$shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.8);

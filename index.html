@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Powerlifting Championship — The Ultimate Strength Showdown. June 15, 2026. Sport Arena, New York. $5000 prize fund."
+        />
+        <title>
+            Powerlifting Championship — The Ultimate Strength Showdown
+        </title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Barlow+Condensed:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <header class="site-header" role="banner">
+            <a
+                href="#"
+                class="header__logo"
+                aria-label="Powerlifting Championship home"
+            >
+                <div class="logo-badge" aria-hidden="true">PL</div>
+                <div class="logo-text">
+                    <span class="logo-line1">Powerlifting</span>
+                    <span class="logo-line2">Championship</span>
+                </div>
+            </a>
+
+            <nav
+                class="site-nav"
+                id="site-nav"
+                role="navigation"
+                aria-label="Main"
+            >
+                <a href="#disciplines" class="site-nav__link">Disciplines</a>
+                <a href="#schedule" class="site-nav__link">Schedule</a>
+                <a href="#prizes" class="site-nav__link">Prizes</a>
+                <a href="#register" class="site-nav__link">Register</a>
+            </nav>
+
+            <div class="header__actions">
+                <a
+                    href="#register"
+                    class="btn btn--primary"
+                    style="padding: 10px 24px; font-size: 0.8rem"
+                >
+                    Register Now
+                </a>
+                <button
+                    class="hamburger"
+                    aria-controls="site-nav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+
+        <section class="hero" id="home" aria-label="Hero">
+            <div class="hero__canvas" aria-hidden="true"></div>
+
+            <div class="hero__content">
+                <div class="hero__text">
+                    <div class="hero__eyebrow">
+                        <span class="eyebrow-line" aria-hidden="true"></span>
+                        <span>Official Competition 2026</span>
+                    </div>
+
+                    <h1 class="hero__title">
+                        The Ultimate
+                        <span class="title-highlight">Strength</span>
+                        <span class="title-outline">Showdown</span>
+                    </h1>
+
+                    <p class="hero__tagline">
+                        Sign up today and test your strength against the best
+                    </p>
+
+                    <div class="hero__cta-group">
+                        <a href="#register" class="btn btn--primary btn--lg"
+                            >Register Now</a
+                        >
+                        <a href="#disciplines" class="btn btn--outline"
+                            >View Disciplines</a
+                        >
+                    </div>
+                </div>
+
+                <div class="hero__visual" aria-hidden="true">
+                    <div class="hero__image-wrap">
+                        <svg
+                            viewBox="0 0 520 480"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Powerlifter illustration"
+                        >
+                            <defs>
+                                <radialGradient
+                                    id="glow1"
+                                    cx="50%"
+                                    cy="40%"
+                                    r="55%"
+                                >
+                                    <stop
+                                        offset="0%"
+                                        stop-color="#c0392b"
+                                        stop-opacity="0.6"
+                                    />
+                                    <stop
+                                        offset="100%"
+                                        stop-color="#0a0a0a"
+                                        stop-opacity="0"
+                                    />
+                                </radialGradient>
+                                <radialGradient
+                                    id="glow2"
+                                    cx="50%"
+                                    cy="60%"
+                                    r="50%"
+                                >
+                                    <stop
+                                        offset="0%"
+                                        stop-color="#f39c12"
+                                        stop-opacity="0.2"
+                                    />
+                                    <stop
+                                        offset="100%"
+                                        stop-color="#0a0a0a"
+                                        stop-opacity="0"
+                                    />
+                                </radialGradient>
+                                <filter id="blur1">
+                                    <feGaussianBlur stdDeviation="8" />
+                                </filter>
+                            </defs>
+                            <rect width="520" height="480" fill="#0f0606" />
+                            <ellipse
+                                cx="260"
+                                cy="200"
+                                rx="220"
+                                ry="160"
+                                fill="url(#glow1)"
+                            />
+                            <ellipse
+                                cx="260"
+                                cy="380"
+                                rx="200"
+                                ry="120"
+                                fill="url(#glow2)"
+                            />
+                            <rect
+                                x="0"
+                                y="400"
+                                width="520"
+                                height="80"
+                                fill="#0a0a0a"
+                            />
+                            <line
+                                x1="0"
+                                y1="400"
+                                x2="520"
+                                y2="400"
+                                stroke="#c0392b"
+                                stroke-width="2"
+                            />
+                            <rect
+                                x="30"
+                                y="228"
+                                width="460"
+                                height="14"
+                                rx="7"
+                                fill="#2a2a2a"
+                            />
+                            <rect
+                                x="30"
+                                y="231"
+                                width="460"
+                                height="8"
+                                rx="4"
+                                fill="#444"
+                            />
+                            <rect
+                                x="30"
+                                y="190"
+                                width="22"
+                                height="90"
+                                rx="4"
+                                fill="#1a1a1a"
+                                stroke="#333"
+                                stroke-width="1.5"
+                            />
+                            <rect
+                                x="55"
+                                y="195"
+                                width="18"
+                                height="80"
+                                rx="3"
+                                fill="#1a1a1a"
+                                stroke="#333"
+                                stroke-width="1.5"
+                            />
+                            <rect
+                                x="75"
+                                y="200"
+                                width="16"
+                                height="70"
+                                rx="3"
+                                fill="#222"
+                                stroke="#c0392b"
+                                stroke-width="1"
+                            />
+                            <rect
+                                x="468"
+                                y="190"
+                                width="22"
+                                height="90"
+                                rx="4"
+                                fill="#1a1a1a"
+                                stroke="#333"
+                                stroke-width="1.5"
+                            />
+                            <rect
+                                x="447"
+                                y="195"
+                                width="18"
+                                height="80"
+                                rx="3"
+                                fill="#1a1a1a"
+                                stroke="#333"
+                                stroke-width="1.5"
+                            />
+                            <rect
+                                x="429"
+                                y="200"
+                                width="16"
+                                height="70"
+                                rx="3"
+                                fill="#222"
+                                stroke="#c0392b"
+                                stroke-width="1"
+                            />
+                            <rect
+                                x="32"
+                                y="225"
+                                width="18"
+                                height="20"
+                                fill="#c0392b"
+                                rx="2"
+                            />
+                            <rect
+                                x="468"
+                                y="225"
+                                width="18"
+                                height="20"
+                                fill="#c0392b"
+                                rx="2"
+                            />
+                            <path
+                                d="M200 400 L220 280 L260 270 L300 280 L320 400"
+                                fill="#111"
+                                stroke="#222"
+                                stroke-width="1"
+                            />
+                            <ellipse
+                                cx="210"
+                                cy="398"
+                                rx="25"
+                                ry="8"
+                                fill="#1a1a1a"
+                            />
+                            <ellipse
+                                cx="310"
+                                cy="398"
+                                rx="25"
+                                ry="8"
+                                fill="#1a1a1a"
+                            />
+                            <ellipse
+                                cx="215"
+                                cy="330"
+                                rx="18"
+                                ry="16"
+                                fill="#c0392b"
+                                opacity="0.9"
+                            />
+                            <ellipse
+                                cx="305"
+                                cy="330"
+                                rx="18"
+                                ry="16"
+                                fill="#c0392b"
+                                opacity="0.9"
+                            />
+                            <path
+                                d="M210 280 Q260 260 310 280 L320 240 Q260 215 200 240 Z"
+                                fill="#1a1a1a"
+                            />
+                            <rect
+                                x="205"
+                                y="255"
+                                width="110"
+                                height="20"
+                                rx="4"
+                                fill="#333"
+                                stroke="#555"
+                                stroke-width="1"
+                            />
+                            <rect
+                                x="245"
+                                y="257"
+                                width="30"
+                                height="16"
+                                rx="2"
+                                fill="#c0392b"
+                            />
+                            <path
+                                d="M205 240 Q160 245 115 232"
+                                stroke="#333"
+                                stroke-width="22"
+                                stroke-linecap="round"
+                                fill="none"
+                            />
+                            <path
+                                d="M205 240 Q160 245 115 232"
+                                stroke="#444"
+                                stroke-width="18"
+                                stroke-linecap="round"
+                                fill="none"
+                            />
+                            <path
+                                d="M315 240 Q360 245 405 232"
+                                stroke="#333"
+                                stroke-width="22"
+                                stroke-linecap="round"
+                                fill="none"
+                            />
+                            <path
+                                d="M315 240 Q360 245 405 232"
+                                stroke="#444"
+                                stroke-width="18"
+                                stroke-linecap="round"
+                                fill="none"
+                            />
+                            <ellipse
+                                cx="118"
+                                cy="234"
+                                rx="12"
+                                ry="8"
+                                fill="#c0392b"
+                                transform="rotate(-15 118 234)"
+                            />
+                            <ellipse
+                                cx="402"
+                                cy="234"
+                                rx="12"
+                                ry="8"
+                                fill="#c0392b"
+                                transform="rotate(15 402 234)"
+                            />
+                            <ellipse
+                                cx="260"
+                                cy="195"
+                                rx="34"
+                                ry="38"
+                                fill="#8B6F47"
+                            />
+                            <path
+                                d="M240 175 Q260 165 280 175 Q285 195 280 215 Q260 225 240 215 Q235 195 240 175"
+                                fill="#7a5f3c"
+                            />
+                            <path
+                                d="M226 175 Q260 155 294 175 Q290 165 260 158 Q230 165 226 175"
+                                fill="#2a1a0a"
+                            />
+                            <g opacity="0.4" filter="url(#blur1)">
+                                <circle
+                                    cx="90"
+                                    cy="220"
+                                    r="25"
+                                    fill="#ffffff"
+                                />
+                                <circle
+                                    cx="430"
+                                    cy="220"
+                                    r="25"
+                                    fill="#ffffff"
+                                />
+                            </g>
+                            <g fill="#f39c12" opacity="0.8">
+                                <polygon
+                                    points="260,60 265,75 280,75 268,84 273,100 260,91 247,100 252,84 240,75 255,75"
+                                />
+                            </g>
+                            <g fill="#e74c3c" opacity="0.6">
+                                <polygon
+                                    points="80,150 83,162 95,162 85,169 89,181 80,174 71,181 75,169 65,162 77,162"
+                                    style="
+                                        transform: scale(0.7);
+                                        transform-origin: 80px 165px;
+                                    "
+                                />
+                                <polygon
+                                    points="440,130 443,142 455,142 445,149 449,161 440,154 431,161 435,149 425,142 437,142"
+                                    style="
+                                        transform: scale(0.6);
+                                        transform-origin: 440px 145px;
+                                    "
+                                />
+                            </g>
+
+                            <line
+                                x1="160"
+                                y1="400"
+                                x2="100"
+                                y2="350"
+                                stroke="#c0392b"
+                                stroke-width="1"
+                                opacity="0.3"
+                            />
+                            <line
+                                x1="360"
+                                y1="400"
+                                x2="420"
+                                y2="350"
+                                stroke="#c0392b"
+                                stroke-width="1"
+                                opacity="0.3"
+                            />
+                            <line
+                                x1="260"
+                                y1="400"
+                                x2="260"
+                                y2="430"
+                                stroke="#c0392b"
+                                stroke-width="2"
+                                opacity="0.5"
+                            />
+
+                            <ellipse
+                                cx="260"
+                                cy="402"
+                                rx="70"
+                                ry="12"
+                                fill="#c0392b"
+                                opacity="0.2"
+                                filter="url(#blur1)"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__info-bar" aria-label="Event details">
+                <div class="hero__info-item">
+                    <div class="info-icon" aria-hidden="true">📅</div>
+                    <div>
+                        <span class="info-label">Date</span>
+                        <span class="info-value">June 15, 2026</span>
+                    </div>
+                </div>
+                <div class="hero__info-item">
+                    <div class="info-icon" aria-hidden="true">📍</div>
+                    <div>
+                        <span class="info-label">Location</span>
+                        <span class="info-value">Sport Arena, New York</span>
+                    </div>
+                </div>
+                <div class="hero__info-item">
+                    <div class="info-icon" aria-hidden="true">🏆</div>
+                    <div>
+                        <span class="info-label">Prizes</span>
+                        <span class="info-value">$5000 Prize Fund</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="countdown-section" aria-label="Event countdown">
+            <div class="countdown-section__inner">
+                <span class="countdown-section__label"
+                    >Competition begins in</span
+                >
+                <h2 class="countdown-section__title">Don't Miss the Action</h2>
+                <div
+                    class="countdown"
+                    role="timer"
+                    aria-live="polite"
+                    aria-label="Countdown to event"
+                >
+                    <div class="countdown__item">
+                        <span class="countdown__number" id="cd-days">00</span>
+                        <span class="countdown__label">Days</span>
+                    </div>
+                    <span class="countdown__sep" aria-hidden="true">:</span>
+                    <div class="countdown__item">
+                        <span class="countdown__number" id="cd-hours">00</span>
+                        <span class="countdown__label">Hours</span>
+                    </div>
+                    <span class="countdown__sep" aria-hidden="true">:</span>
+                    <div class="countdown__item">
+                        <span class="countdown__number" id="cd-mins">00</span>
+                        <span class="countdown__label">Minutes</span>
+                    </div>
+                    <span class="countdown__sep" aria-hidden="true">:</span>
+                    <div class="countdown__item">
+                        <span class="countdown__number" id="cd-secs">00</span>
+                        <span class="countdown__label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section" aria-label="Championship statistics">
+            <div class="stats-section__grid">
+                <div class="stat-item reveal">
+                    <span
+                        class="stat-item__number"
+                        data-counter="250"
+                        data-suffix="+"
+                        >0+</span
+                    >
+                    <span class="stat-item__label">Athletes Registered</span>
+                </div>
+                <div class="stat-item reveal delay-1">
+                    <span class="stat-item__number" data-counter="18">0</span>
+                    <span class="stat-item__label">Weight Categories</span>
+                </div>
+                <div class="stat-item reveal delay-2">
+                    <span class="stat-item__number">
+                        <span data-counter="5000" data-suffix="">0</span>
+                        <span style="color: #c0392b">$</span>
+                    </span>
+                    <span class="stat-item__label">Prize Pool</span>
+                </div>
+                <div class="stat-item reveal delay-3">
+                    <span class="stat-item__number" data-counter="12">0</span>
+                    <span class="stat-item__label">Countries Competing</span>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="disciplines"
+            id="disciplines"
+            aria-label="Competition disciplines"
+        >
+            <div class="disciplines__header reveal">
+                <span class="section-label">The Big Three</span>
+                <h2>Competition Disciplines</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="disciplines__grid">
+                <article class="discipline-card reveal delay-1">
+                    <span class="discipline-card__number" aria-hidden="true"
+                        >01</span
+                    >
+                    <span class="discipline-card__icon" aria-hidden="true"
+                        >🏋️</span
+                    >
+                    <h3 class="discipline-card__title">Squat</h3>
+                    <p class="discipline-card__sub">Lower Body Power</p>
+                    <p class="discipline-card__desc">
+                        The foundation of powerlifting. Descend below parallel
+                        and drive through your heels to lock out. Three judges,
+                        two white lights to pass.
+                    </p>
+                    <div class="discipline-card__record">
+                        <span class="record-label">World Record</span>
+                        <span class="record-value">570 kg</span>
+                    </div>
+                </article>
+
+                <article class="discipline-card reveal delay-2">
+                    <span class="discipline-card__number" aria-hidden="true"
+                        >02</span
+                    >
+                    <span class="discipline-card__icon" aria-hidden="true"
+                        >💪</span
+                    >
+                    <h3 class="discipline-card__title">Bench Press</h3>
+                    <p class="discipline-card__sub">Upper Body Strength</p>
+                    <p class="discipline-card__desc">
+                        Control the bar to your chest, pause on command, then
+                        press explosively to full lockout. Precision meets raw
+                        power on the platform.
+                    </p>
+                    <div class="discipline-card__record">
+                        <span class="record-label">World Record</span>
+                        <span class="record-value">355 kg</span>
+                    </div>
+                </article>
+
+                <article class="discipline-card reveal delay-3">
+                    <span class="discipline-card__number" aria-hidden="true"
+                        >03</span
+                    >
+                    <span class="discipline-card__icon" aria-hidden="true"
+                        >⚡</span
+                    >
+                    <h3 class="discipline-card__title">Deadlift</h3>
+                    <p class="discipline-card__sub">Total Body Domination</p>
+                    <p class="discipline-card__desc">
+                        The final lift. Pull from the floor to full lockout —
+                        hips and knees extended, shoulders back. The ultimate
+                        test of raw human strength.
+                    </p>
+                    <div class="discipline-card__record">
+                        <span class="record-label">World Record</span>
+                        <span class="record-value">501 kg</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section
+            class="schedule-section"
+            id="schedule"
+            aria-label="Event schedule"
+        >
+            <div class="schedule-section__header reveal">
+                <span class="section-label">June 15, 2026</span>
+                <h2>Event Schedule</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="schedule-section__grid">
+                <div class="schedule-row reveal">
+                    <span class="schedule-row__time">07:00 AM</span>
+                    <div class="schedule-row__event">
+                        Athlete Check-In & Weigh-In
+                        <small>Registration Desk — Main Lobby</small>
+                    </div>
+                    <span class="schedule-row__badge">All Athletes</span>
+                </div>
+
+                <div class="schedule-row reveal delay-1">
+                    <span class="schedule-row__time">09:00 AM</span>
+                    <div class="schedule-row__event">
+                        Opening Ceremony
+                        <small>Main Stage — Sport Arena</small>
+                    </div>
+                    <span class="schedule-row__badge">All</span>
+                </div>
+
+                <div class="schedule-row reveal delay-2 schedule-row--active">
+                    <span class="schedule-row__time">10:00 AM</span>
+                    <div class="schedule-row__event">
+                        Squat Competition Begins
+                        <small>Platform A & B</small>
+                    </div>
+                    <span class="schedule-row__badge--gold schedule-row__badge"
+                        >LIVE</span
+                    >
+                </div>
+
+                <div class="schedule-row reveal delay-3">
+                    <span class="schedule-row__time">01:00 PM</span>
+                    <div class="schedule-row__event">
+                        Bench Press Competition
+                        <small>Platform A & B</small>
+                    </div>
+                    <span class="schedule-row__badge">Competition</span>
+                </div>
+
+                <div class="schedule-row reveal delay-4">
+                    <span class="schedule-row__time">03:30 PM</span>
+                    <div class="schedule-row__event">
+                        Deadlift Competition
+                        <small>Platform A & B — Final Lifts</small>
+                    </div>
+                    <span class="schedule-row__badge">Competition</span>
+                </div>
+
+                <div class="schedule-row reveal delay-5">
+                    <span class="schedule-row__time">06:00 PM</span>
+                    <div class="schedule-row__event">
+                        Awards Ceremony & Prize Distribution
+                        <small>Main Stage — $5000 Prize Fund</small>
+                    </div>
+                    <span class="schedule-row__badge--gold schedule-row__badge"
+                        >Prizes</span
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="prizes-section"
+            id="prizes"
+            aria-label="Prize structure"
+        >
+            <div class="prizes-section__header reveal">
+                <span class="section-label">Win Big</span>
+                <h2>Prize Structure</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="prizes-section__grid">
+                <article class="prize-card reveal delay-2">
+                    <div class="prize-card__place prize-card__place--silver">
+                        2nd
+                    </div>
+                    <div class="prize-card__amount">$1,500</div>
+                    <ul class="prize-card__perks">
+                        <li>Silver Medals</li>
+                        <li>Trophy & Certificate</li>
+                        <li>Sponsor Gift Pack</li>
+                        <li>Media Feature</li>
+                    </ul>
+                </article>
+
+                <article class="prize-card prize-card--gold reveal delay-1">
+                    <div class="prize-card__place prize-card__place--gold">
+                        1st
+                    </div>
+                    <div class="prize-card__amount">$3,000</div>
+                    <ul class="prize-card__perks">
+                        <li>Champion Belt & Ring</li>
+                        <li>Gold Medals</li>
+                        <li>Trophy & Certificate</li>
+                        <li>Full Media Coverage</li>
+                        <li>Sponsor Deal Opportunity</li>
+                    </ul>
+                </article>
+
+                <article class="prize-card reveal delay-3">
+                    <div class="prize-card__place prize-card__place--bronze">
+                        3rd
+                    </div>
+                    <div class="prize-card__amount">$500</div>
+                    <ul class="prize-card__perks">
+                        <li>Bronze Medals</li>
+                        <li>Trophy & Certificate</li>
+                        <li>Sponsor Gift Pack</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section
+            class="register-section"
+            id="register"
+            aria-label="Registration"
+        >
+            <div class="register-section__inner">
+                <span class="register-section__eyebrow reveal"
+                    >Limited Spots Available</span
+                >
+                <h2 class="reveal">Join the<br />Competition!</h2>
+                <p class="reveal delay-1">
+                    Sign up today and test your strength against the best
+                    powerlifters in the world. Open to all skill levels and
+                    weight categories.
+                </p>
+
+                <form
+                    class="register-section__form js-register-form reveal delay-2"
+                    novalidate
+                >
+                    <label class="sr-only" for="reg-email"
+                        >Your email address</label
+                    >
+                    <input
+                        type="email"
+                        id="reg-email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    />
+                    <button type="submit" class="btn btn--primary">
+                        Register Now
+                    </button>
+                </form>
+
+                <p class="register-section__disclaimer reveal delay-3">
+                    No spam. Unsubscribe at any time. Registration confirmation
+                    sent instantly.
+                </p>
+            </div>
+        </section>
+
+        <footer class="site-footer" role="contentinfo">
+            <nav class="site-footer__links" aria-label="Footer navigation">
+                <a href="#disciplines">Rules &amp; Categories</a>
+                <a href="#schedule">Event Schedule</a>
+                <a href="#prizes">Prizes</a>
+                <a href="#register">Contact Us</a>
+            </nav>
+            <p class="site-footer__copy">
+                &copy; 2026 Powerlifting Championship. All rights reserved.
+            </p>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
