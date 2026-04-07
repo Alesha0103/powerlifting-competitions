@@ -313,6 +313,7 @@ h6 {
     display: none;
   }
   .site-nav.open {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     position: fixed;
